@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Http\Controllers\AdminLoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+// Admin login Route 😊😀😊
+Route::controller(AdminLoginController::class)->group(function () {
+
+    Route::any('/admin', 'adminLogin');
+    Route::any('/adminloginSystem', 'adminloginSystem')->name('adminloginSystem');
+
+    Route::get('/adminDashboard','admindashboard');
+
+    Route::get('/adminlogout','adminlogout');
+
+
 });
