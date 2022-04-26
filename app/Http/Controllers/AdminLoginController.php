@@ -5,16 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\AdminLogin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth;
 use Illuminate\Support\Facades\Session;
 
 class AdminLoginController extends Controller
 {
+    
      // admin login form 😊
      public function adminLogin()
      {
          return view('Admin/adminLogin');
+         
      }
-
+    
+     
     
     //  admin login checked 
     public function adminloginSystem(Request $request)
