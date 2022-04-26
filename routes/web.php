@@ -26,7 +26,7 @@ Route::controller(AdminLoginController::class)->group(function () {
     Route::any('/admin', 'adminLogin');
     Route::any('/adminloginSystem', 'adminloginSystem')->name('adminloginSystem');
 
-    Route::get('/adminDashboard','admindashboard');
+    Route::get('/adminDashboard','admindashboard')->middleware('IsLogin');
 
     Route::get('/adminlogout','adminlogout');
 
