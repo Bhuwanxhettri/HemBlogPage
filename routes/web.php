@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\EditorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,4 +32,9 @@ Route::controller(AdminLoginController::class)->group(function () {
     Route::get('/adminlogout','adminlogout');
 
 
+});
+
+Route::controller(EditorController::class)->group(function(){
+        Route::post('/create','store');
+        Route::post('/upload','uploadimage')->name('ckeditor.upload');
 });

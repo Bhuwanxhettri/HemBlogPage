@@ -14,10 +14,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
       <div class="container">
         <a class="navbar-brand h5 text-uppercase" href="#"> Blog Site</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       
+    
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             
             <li class="nav-item">
@@ -27,9 +25,45 @@
         
           </ul>
          
-        </div>
+
       </div>
     </nav>
+
+    <section class="blog-post">
+
+      <div class="row mx-5">
+        <div class="col-sm-8 my-5 card p-4 bg-light">
+          <h3 class="text-center text-warning">Post Your Blog </h3>
+          <form action="/create" method="post">
+            @csrf
+            <label for="title">Title</label>
+            <input type="text" name="title" class="form-control mb-3" id="title" placeholder="Title"/>
+
+            <textarea class="form-control" name="description my-5" id="editor"> </textarea>
+            <button class="btn btn-danger px-5 mt-4 h4" type="submit">Post</button>
+          </form>
+        </div>
+      </div>
+
+    </section>
+
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+    <script>
+      ClassicEditor
+              .create( document.querySelector( '#editor' ),{
+                   ckfinder:{
+                    //  ckeditor for uplading image
+                     uploadUrl:'{{ route('ckeditor.upload').'?_token='.csrf_token() }}'
+                   }
+              } )
+              .then( editor => {
+                      console.log( editor );
+              } )
+              .catch( error => {
+                      console.error( error );
+              } );
+     </script> 
       
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
