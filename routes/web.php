@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\EditorController;
+use App\Http\Livewire\Admin\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,8 +34,19 @@ Route::controller(AdminLoginController::class)->group(function () {
 
 
 });
+// livewire
+Route::get('/admin/post', Post::class)->name('post');
 
 Route::controller(EditorController::class)->group(function(){
         Route::post('/create','store');
         Route::post('/upload','uploadimage')->name('ckeditor.upload');
+});
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
