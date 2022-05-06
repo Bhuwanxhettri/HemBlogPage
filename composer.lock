@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "7249aaaa061956fda3b984c4eaadfddf",
+=======
+    "content-hash": "d1f639aa6582e114f411f5cabff4b19f",
+>>>>>>> 142b6cd26b17d00812b2c8c566ed5cd8ce5bda4e
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2037,6 +2041,7 @@
             "time": "2022-04-07T21:38:12+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "mobiledetect/mobiledetectlib",
             "version": "2.8.39",
             "source": {
@@ -2093,6 +2098,8 @@
             "time": "2022-02-17T19:24:25+00:00"
         },
         {
+=======
+>>>>>>> 142b6cd26b17d00812b2c8c566ed5cd8ce5bda4e
             "name": "monolog/monolog",
             "version": "2.5.0",
             "source": {
